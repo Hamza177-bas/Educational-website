@@ -1,81 +1,71 @@
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color:  #D4AF7F;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-h1 {
-    font-size: 36px;
-}
-
-p {
-    font-size: 18px;
-}
-
-#country-info, #quiz {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#country-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#country-list li {
-    padding: 8px;
-    background-color: #e2e2e2;
-    margin-bottom: 8px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#country-list li:hover {
-    background-color: #ddd;
-}
-
-#country-details {
-    margin-top: 20px;
-}
-
-#quiz-form {
-    margin-top: 20px;
-}
-
-input[type="text"] {
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #D4AF7F;
-    color: white;
+.bn4 {
+    background-color: #ffffff;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-
-footer {
+    color: rgb(0, 0, 0);
+    padding: 0.7em 1.7em;
     text-align: center;
-    padding: 20px;
-    background-color: #D4AF7F;
-    color: white;
-}
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .bn4:hover {
+    opacity: 1;
+  }
+  .container-eg-btn-3 {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 10px;
+    padding: .5em;
+    line-height: normal;
+  }
+  .container-eg-btn-3 .button {
+    color: #fff;
+    margin: 20px;
+    padding: 12px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: .3s;
+    z-index: 1;
+    background: #e79522;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .container-eg-btn-3 .button-7:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, #000 0%, rgb(99 103 203 / 0%) 80%);
+    transition-duration: 0.3s;
+    transition-property: transform opacity;
+  }
+  .container-eg-btn-3 .button-7:hover{
+    background: #000;
+    transform: translateY(-5px);    
+  }
+  .container-eg-btn-3 .button-7:hover:before{
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
