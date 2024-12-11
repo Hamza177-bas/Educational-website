@@ -55,7 +55,6 @@ VALUES
     UPDATE pays
         SET name = 'New Country Name', population = 45000000, languages = 'New Language'
         WHERE id = 1;
-
     -- Delete
     DELETE FROM pays
         WHERE id = 1; 
