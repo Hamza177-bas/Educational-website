@@ -1,8 +1,5 @@
 <DOCTYPE html>
 <html>
-
-<?php
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>   
 <body>
-    
- <nav class="bg-[#C27D27] shadow-md">
+<div class="">
+<?php
+   
+?>
+</div>
+<nav class="bg-[#C27D27] shadow-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             
             <div class="text-white text-2xl font-bold uppercase tracking-wider">
@@ -151,8 +152,8 @@
     </main>
     
     <div class="container-eg-btn-3">
-        <button class="button button-7 ">Administrateur</button>
-        <button class="button button-7">Utilisateur</button>
+    <a href="Admin.php"><button class="button button-7 Admin"> Administrateur</button></a>
+    <a href="Utilis.php"><button class="button button-7 Utilis">Utilisateur</button></a>
       </div>
     <footer class="bg-[#6B3E26] text-white text-center py-4">
         <p>&copy; 2024 Explore Africa | All Rights Reserved</p>

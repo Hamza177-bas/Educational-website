@@ -31,3 +31,7 @@ let currentIndex = 0;
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+
+let mas=document.querySelector(".mas");
+let Admin=document.querySelector(".Admin");
+
