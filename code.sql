@@ -1,9 +1,9 @@
+CREATE DATABASE data_africia;
 
 CREATE TABLE continent (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
-
 
 CREATE TABLE pays (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -49,4 +49,17 @@ VALUES
     ('Accra', 'Capital City', 7),     
     ('Kampala', 'Capital City', 8),  
     ('Algiers', 'Capital City', 9),   
-    ('Dakar', 'Capital City', 10); 
+    ('Dakar', 'Capital City', 10);
+
+    -- Update a city
+    UPDATE pays
+        SET name = 'New Country Name', population = 45000000, languages = 'New Language'
+        WHERE id = 1;
+
+    -- Delete
+    DELETE FROM pays
+        WHERE id = 1; 
+    -- SELECT
+    SELECT * FROM `vill`
+
+
