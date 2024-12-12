@@ -29,9 +29,58 @@
             </ul>
         </div>
     </nav>
-    <!-- <footer class="bg-[#6B3E26] text-white text-center py-4">
+    <?php 
+include('conn.php');
+
+$pays = mysqli_query($conn, "SELECT * FROM `pays`");
+
+
+$vill =mysqli_query($conn,"SELECT * FROM `vill`");
+$continent =mysqli_query($conn,"SELECT * FROM `continent`");
+
+?>
+<div class="container mx-auto p-6">
+
+<!-- Pays (Countries) Section -->
+<h2 class="text-3xl font-bold text-center text-green-600 mb-6">Pays (Countries)</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+    <?php while ($row = mysqli_fetch_array($pays)) { ?>
+        <div class="bg-orange-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-green-700"><?= $row['name']; ?></span></p>
+            <p class="text-gray-600">Population: <?= $row['population']; ?></p>
+            <p class="text-gray-600">Languages: <?= $row['languages']; ?></p>
+           
+        
+        </div>
+    <?php } ?>
+</div>
+
+<h2 class="text-3xl font-bold text-center text-yellow-600 mt-12 mb-6">Villages</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <?php while ($row = mysqli_fetch_array($vill)) { ?>
+        <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-yellow-700"><?= $row['name']; ?></span></p>
+            <p class="text-gray-600">Type: <?= $row['type']; ?></p>
+            
+        </div>
+    <?php } ?>
+</div>
+
+<!-- Continent Section -->
+<h2 class="text-3xl font-bold text-center text-red-600 mt-12 mb-6">Continents</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <?php while ($row = mysqli_fetch_array($continent)) { ?>
+
+        <div class="bg-yellow-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-red-700"><?= $row['name']; ?></span></p>
+          
+    <?php }?>
+</div>
+</div>
+</div>
+    <footer class="bg-[#6B3E26] text-white text-center py-4">
         <p>&copy; 2024 Explore Africa | All Rights Reserved</p>
-    </footer> -->
+    </footer>
     <script src="script.js"></script>
     </body>
 </html>
