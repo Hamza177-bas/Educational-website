@@ -64,6 +64,9 @@
     transform: translateY(5px);
   }
   
+ .line{
+   border-top: solid 2px black;
+ }
   @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }

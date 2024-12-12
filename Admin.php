@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Administrateur</title>
 </head>
 <body>
@@ -37,54 +38,94 @@ $pays = mysqli_query($conn, "SELECT * FROM `pays`");
 
 $vill =mysqli_query($conn,"SELECT * FROM `vill`");
 $continent =mysqli_query($conn,"SELECT * FROM `continent`");
-?>
 
+?>
 <div class="container mx-auto p-6">
 
 <!-- Pays (Countries) Section -->
-<h2 class="text-3xl font-bold text-center text-indigo-600 mb-6">Pays</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<h2 class="text-3xl font-bold text-center text-green-600 mb-6">Pays (Countries)</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
     <?php while ($row = mysqli_fetch_array($pays)) { ?>
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold text-gray-800">ID: <?= $row['id']; ?></h3>
-            <p class="text-gray-600">Name: <?= $row['name']; ?></p>
+        <div class="bg-orange-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <!-- Image for Country -->
+            <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-green-700"><?= $row['name']; ?></span></p>
             <p class="text-gray-600">Population: <?= $row['population']; ?></p>
             <p class="text-gray-600">Languages: <?= $row['languages']; ?></p>
             <p class="text-gray-600">Continent ID: <?= $row['id_continent']; ?></p>
+        <div class="line w-[8rem] mt-[5px]">
+                <!-- Edit Button -->
+                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
+                </button>
+                
+                <!-- Delete Button -->
+                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
+                </button>
+
         </div>
-    <?php }?>
+        </div>
+    <?php } ?>
 </div>
 
 <!-- Vill (Villages) Section -->
-<h2 class="text-3xl font-bold text-center text-indigo-600 mt-12 mb-6">Villages</h2>
+<h2 class="text-3xl font-bold text-center text-yellow-600 mt-12 mb-6">Villages</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <?php while ($row = mysqli_fetch_array($vill)) { ?>
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold text-gray-800">ID: <?= $row['id']; ?></h3>
-            <p class="text-gray-600">Name: <?= $row['name']; ?></p>
+        <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            
+            
+            <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-yellow-700"><?= $row['name']; ?></span></p>
             <p class="text-gray-600">Type: <?= $row['type']; ?></p>
             <p class="text-gray-600">Country ID: <?= $row['id_pays']; ?></p>
+            <div class="line w-[8rem] mt-[5px]">
+                <!-- Edit Button -->
+                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
+                </button>
+                
+                <!-- Delete Button -->
+                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
+                </button>
+
+        </div>
+
+            
         </div>
     <?php } ?>
 </div>
 
 <!-- Continent Section -->
-<h2 class="text-3xl font-bold text-center text-indigo-600 mt-12 mb-6">Continents</h2>
+<h2 class="text-3xl font-bold text-center text-red-600 mt-12 mb-6">Continents</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <?php while ($row = mysqli_fetch_array($continent)) { ?>
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold text-gray-800">ID: <?= $row['id']; ?></h3>
-            <p class="text-gray-600">Name: <?= $row['name']; ?></p>
+        <div class="bg-yellow-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            
+            <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
+            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-red-700"><?= $row['name']; ?></span></p>
+            <div class="line w-[8rem] mt-[5px]">
+                <!-- Edit Button -->
+                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
+                </button>
+                
+                <!-- Delete Button -->
+                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
+                </button>
+
         </div>
-    <?php } ?>
+        </div>
+    <?php }?>
+</div>
 </div>
 
-</div>
 <footer class="bg-[#6B3E26] text-white text-center py-4">
         <p>&copy; 2024 Explore Africa | All Rights Reserved</p>
     </footer>
-
-
 <script src="script.js"></script>
 </body>
 </html>

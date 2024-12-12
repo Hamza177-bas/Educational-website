@@ -6,7 +6,7 @@
     <title>Africa</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-</head>   
+</head>
 <body>
 <div class="">
 <?php
