@@ -1,4 +1,21 @@
+<?php 
+            include 'conn.php';
 
+           
+            if (isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($conn, $_GET['id']);  // تأكد من أنك تقوم بإجراء التحقق من SQL injection
+                $delete = mysqli_query($conn, "DELETE FROM `vill` WHERE `id` = '$id'");
+            
+                if ($delete) {
+                    echo "تم الحذف بنجاح!";
+                } else {
+                    echo "حدث خطأ أثناء الحذف.";
+                }
+            }
+           
+            
+            
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,11 +73,15 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
                 <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
                 <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
                 </button>
-                
-                <!-- Delete Button -->
-                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
-                </button>
+                <!-- DELETE -->
+                <a href="<?= $row['id']; ?>">
+    <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+        <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
+    </button>
+</a>
+
+
+
 
         </div>
         </div>
@@ -89,6 +110,7 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
                 </button>
                 
                 <!-- Delete Button -->
+                <a href="Admin.php?id=<?= $row['id']; ?>">
                 <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
                 <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
                 </button>

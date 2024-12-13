@@ -17,7 +17,7 @@
         $nome = $_POST['nom'];
         $type = $_POST['City'];
         $namepays = $_POST['pays'];  
-        echo $nome;
+        // echo $nome;
         $stmt = "INSERT INTO vill (name, type, id_pays) VALUES ('$nome', '$type', '$namepays')";
         mysqli_query($conn,$stmt);
 
