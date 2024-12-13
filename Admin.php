@@ -34,8 +34,6 @@
 include('conn.php');
 
 $pays = mysqli_query($conn, "SELECT * FROM `pays`");
-
-
 $vill =mysqli_query($conn,"SELECT * FROM `vill`");
 $continent =mysqli_query($conn,"SELECT * FROM `continent`");
 
@@ -67,6 +65,10 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
         </div>
         </div>
     <?php } ?>
+                <a href="insertpays.php" class="ajoute m-[auto]">
+                                    Add Pays
+                </a>
+        </div>
 </div>
 
 <!-- Vill (Villages) Section -->
@@ -92,10 +94,13 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
                 </button>
 
         </div>
-
+            
             
         </div>
     <?php } ?>
+          <a href="insertvill.php" class="ajoute m-[auto]">
+                        Add vill
+    </a>
 </div>
 
 <!-- Continent Section -->
