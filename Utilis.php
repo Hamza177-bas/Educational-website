@@ -40,10 +40,10 @@ $vill =mysqli_query($conn,"SELECT * FROM `vill`");
 $continent =mysqli_query($conn,"SELECT * FROM `continent`");
 
 ?>
-<div class="flex justify-between">
-    <img src="/Educational-website/img_page/1-9912020.png" alt="" class="mt-[2rem] ml-[2rem] h-[10rem]">
-    <img src="/Educational-website/img_page/lion_584-430-min.png" alt="" class="ml-[2rem] mt-[2rem] h-[10rem]">
-    <img src="/Educational-website/img_page/OIP.jpeg" alt="" class="ml-[2rem] mt-[2.4rem] mr-[2rem] h-[10rem]">
+<div class="flex justify-center">
+    <!-- <img src="/Educational-website/img_page/depositphotos_79371790-stock-illustration-african-folk-dance-women-with.jpg" alt="" class="mt-[3rem] ml-[2rem] h-[6rem]"> -->
+    <img src="/Educational-website/img_page/lion_584-430-min.jpg" alt="" class="ml-[2rem] mt-[2rem] h-[8rem]">
+    <img src="/Educational-website/img_page/OIP.jpeg" alt="" class="ml-[2rem] mt-[4rem] mr-[2rem] h-[5rem]">
 
 </div>
 <div class="container mx-auto p-6">

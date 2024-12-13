@@ -123,9 +123,6 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
     <?php }?>
 </div>
 </div>
-                <form action="">
-                    
-                </form>
 <footer class="bg-[#6B3E26] text-white text-center py-4">
         <p>&copy; 2024 Explore Africa | All Rights Reserved</p>
     </footer>
