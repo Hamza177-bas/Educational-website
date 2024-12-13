@@ -1,28 +1,33 @@
 <?php 
+            
             include 'conn.php';
+            
+          
+            if (isset($_GET['id']) && isset($_GET['type'])) {
+                $id = mysqli_real_escape_string($conn, $_GET['id']); 
+                $type = mysqli_real_escape_string($conn, $_GET['type']);
+            
+                if ($type == 'vill') {
+                   
+                    $delete = mysqli_query($conn, "DELETE FROM `vill` WHERE `id` = '$id'");
+                    if ($delete) {
+                        echo " valid";
+                    } else {
+                        echo "novalid";
+                    }
+                } elseif ($type == 'pays') {
+                    $delete_vill = mysqli_query($conn, "DELETE FROM `vill` WHERE `id_pays` = '$id'");
 
-        
-            if (isset($_GET['id'])) {
-                $id = mysqli_real_escape_string($conn, $_GET['id']);  //SQL injection
-                $delete = mysqli_query($conn, "DELETE FROM `vill` WHERE `id` = '$id'");
-            
-                if ($delete) {
-                    echo "valid";
-                } else {
-                    echo "novalid";
+                    $delete = mysqli_query($conn, "DELETE FROM `pays` WHERE `id` = '$id'");
+                    if ($delete) {
+                        echo " valide";
+                    } else {
+                        echo " novalide";
+                    }
                 }
             }
-                    
-            if (isset($_GET['id'])) {
-                $id = mysqli_real_escape_string($conn, $_GET['id']);  //SQL injection
-                $delet = mysqli_query($conn, "DELETE FROM `pays` WHERE `id` = '$id'");
             
-                if ($delet) {
-                    echo "valid1";
-                } else {
-                    echo "novalid1";
-                }
-            }
+            
             
             
             
@@ -58,55 +63,54 @@
             </ul>
         </div>
     </nav>
-<?php 
-include('conn.php');
+                <?php 
+                include('conn.php');
 
-$pays = mysqli_query($conn, "SELECT * FROM `pays`");
-$vill =mysqli_query($conn,"SELECT * FROM `vill`");
-$continent =mysqli_query($conn,"SELECT * FROM `continent`");
+                $pays = mysqli_query($conn, "SELECT * FROM `pays`");
+                $vill =mysqli_query($conn,"SELECT * FROM `vill`");
+                $continent =mysqli_query($conn,"SELECT * FROM `continent`");
 
-?>
-<div class="container mx-auto p-6">
+                ?>
+                    <div class="container mx-auto p-6">
 
-<!-- Pays (Countries) Section -->
-<h2 class="text-3xl font-bold text-center text-green-600 mb-6">Pays (Countries)</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
-    <?php while ($row = mysqli_fetch_array($pays)){ ?>
-        <div class="bg-orange-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <!-- Image for Country -->
-            <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
-            <p class="text-gray-700 text-lg">Name: <span class="font-bold text-green-700"><?= $row['name']; ?></span></p>
-            <p class="text-gray-600">Population: <?= $row['population']; ?></p>
-            <p class="text-gray-600">Languages: <?= $row['languages']; ?></p>
-            <p class="text-gray-600">Continent ID: <?= $row['id_continent']; ?></p>
-        <div class="line w-[8rem] mt-[5px]">
-                <!-- Edit Button -->
-                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
-                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
-                </button>
-                <!-- DELETE -->
-                 
-                <a href="Admin.php?id=<?= $row['id']; ?>">
-        <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-        <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
-    </button>
-</a>
-
-
+                    <!-- Pays (Countries) Section -->
+                    <h2 class="text-3xl font-bold text-center text-green-600 mb-6">Pays (Countries)</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+                        <?php while ($row = mysqli_fetch_array($pays)){ ?>
+                            <div class="bg-orange-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                                <!-- Image for Country -->
+                                <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
+                                <p class="text-gray-700 text-lg">Name: <span class="font-bold text-green-700"><?= $row['name']; ?></span></p>
+                                <p class="text-gray-600">Population: <?= $row['population']; ?></p>
+                                <p class="text-gray-600">Languages: <?= $row['languages']; ?></p>
+                                <p class="text-gray-600">Continent ID: <?= $row['id_continent']; ?></p>
+                            <div class="line w-[8rem] mt-[5px]">
+                                    <!-- Edit Button -->
+                                    <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+                                    <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
+                                    </button>
+                                    <!-- DELETE -->
+                                    
+                                    <a href="Admin.php?id=<?= $row['id']; ?>&type=pays">
+                        <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                            <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="حذف">
+                        </button>
+                    </a>
 
 
-        </div>
-        </div>
-    <?php } ?>
-                <a href="insertpays.php" class="ajoute m-[auto]">
-                                    Add Pays
-                </a>
-        </div>
-</div>
 
-<!-- Vill (Villages) Section -->
-<h2 class="text-3xl font-bold text-center text-yellow-600 mt-12 mb-6">Villages</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            </div>
+                            </div>
+                        <?php } ?>
+                                    <a href="insertpays.php" class="ajoute m-[auto]">
+                                                        Add Pays
+                                    </a>
+                            </div>
+                    </div>
+                    <div class="container mx-auto p-6">
+                    <!-- Vill (Villages) Section -->
+                    <h2 class="text-3xl font-bold text-center text-yellow-600 mt-12 mb-6">Villages</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <?php while ($row = mysqli_fetch_array($vill)) { ?>
         <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             
@@ -122,10 +126,11 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
                 </button>
                 
                 <!-- Delete Button -->
-                <a href="Admin.php?id=<?= $row['id']; ?>">
-                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
-                </button>
+                <a href="Admin.php?id=<?= $row['id']; ?>&type=vill">
+    <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+        <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="حذف">
+    </button>
+</a>
 
         </div>
             
