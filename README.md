@@ -18,4 +18,4 @@ An interactive educational tool to learn about African countries, their capitals
 3. Configure the database connection in `config/config.php`.
 4. Run the project on your local server.
 
-![Sit Africa](/Educational-website/img_page/img-project-reademe.png)
+<a href="https://www.canva.com/design/DAGZBe-PH00/3GXvykqD6WGVP-kZFNolpg/edit?utm_content=DAGZBe-PH00&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Presentation</a>
