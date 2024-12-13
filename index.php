@@ -26,7 +26,7 @@
                 <li><a href="Utilis.php" class="text-white text-lg font-medium uppercase hover:text-[#F1C40F] transition duration-300">Utilisateur</a></li>
             </ul>
 
-        <div id="mobile-menu" class="md:hidden hidden bg-[#C27D27] ">
+        <div id="mobile-menu" class="md:hidden hidden bg-[#C27D27]">
             <ul class="space-y-4 py-4 px-6">
                 <li><a href="#home" class="text-white text-lg font-medium uppercase hover:text-[#F1C40F] transition duration-300">Home</a></li>
                 <li><a href="#about" class="text-white text-lg font-medium uppercase hover:text-[#F1C40F] transition duration-300">About</a></li>

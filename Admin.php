@@ -26,11 +26,6 @@
                     }
                 }
             }
-            
-            
-            
-            
-            
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,15 +80,18 @@
                                 <p class="text-gray-600">Languages: <?= $row['languages']; ?></p>
                                 <p class="text-gray-600">Continent ID: <?= $row['id_continent']; ?></p>
                             <div class="line w-[8rem] mt-[5px]">
-                                    <!-- Edit Button -->
-                                    <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
-                                    <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
-                                    </button>
+                                   <!-- Edit Button for Pays -->
+<a href="editpays.php?id=<?= $row['id']; ?>&type=pays">
+    <button class="text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+        <img src="/Educational-website/img_page/icons8-edit-24.png" alt="EDITE">
+    </button>
+</a>
+
                                     <!-- DELETE -->
                                     
                                     <a href="Admin.php?id=<?= $row['id']; ?>&type=pays">
                         <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-                            <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="حذف">
+                            <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="DELET">
                         </button>
                     </a>
 
@@ -120,10 +118,13 @@
             <p class="text-gray-600">Type: <?= $row['type']; ?></p>
             <p class="text-gray-600">Country ID: <?= $row['id_pays']; ?></p>
             <div class="line w-[8rem] mt-[5px]">
-                <!-- Edit Button -->
-                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
-                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
-                </button>
+               <!-- Edit Button for Villages -->
+<a href="editvill.php?id=<?= $row['id']; ?>&type=vill">
+    <button class="text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
+        <img src="/Educational-website/img_page/icons8-edit-24.png" alt="تعديل">
+    </button>
+</a>
+
                 
                 <!-- Delete Button -->
                 <a href="Admin.php?id=<?= $row['id']; ?>&type=vill">
