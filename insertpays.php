@@ -33,7 +33,6 @@
 
         $stmt = $conn->prepare("INSERT INTO pays (name, population, languages, id_continent) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("sisi", $name, $population, $languages,$id_con);
-        
         if ($stmt->execute()) {
             // echo "New record inserted successfully!";
         } else {
