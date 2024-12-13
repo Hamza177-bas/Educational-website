@@ -1,18 +1,29 @@
 <?php 
             include 'conn.php';
 
-           
+        
             if (isset($_GET['id'])) {
-                $id = mysqli_real_escape_string($conn, $_GET['id']);  // تأكد من أنك تقوم بإجراء التحقق من SQL injection
+                $id = mysqli_real_escape_string($conn, $_GET['id']);  //SQL injection
                 $delete = mysqli_query($conn, "DELETE FROM `vill` WHERE `id` = '$id'");
             
                 if ($delete) {
-                    echo "تم الحذف بنجاح!";
+                    echo "valid";
                 } else {
-                    echo "حدث خطأ أثناء الحذف.";
+                    echo "novalid";
                 }
             }
-           
+                    
+            if (isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($conn, $_GET['id']);  //SQL injection
+                $delet = mysqli_query($conn, "DELETE FROM `pays` WHERE `id` = '$id'");
+            
+                if ($delet) {
+                    echo "valid1";
+                } else {
+                    echo "novalid1";
+                }
+            }
+            
             
             
 ?>
@@ -60,7 +71,7 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
 <!-- Pays (Countries) Section -->
 <h2 class="text-3xl font-bold text-center text-green-600 mb-6">Pays (Countries)</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
-    <?php while ($row = mysqli_fetch_array($pays)) { ?>
+    <?php while ($row = mysqli_fetch_array($pays)){ ?>
         <div class="bg-orange-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             <!-- Image for Country -->
             <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
@@ -74,8 +85,9 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
                 <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
                 </button>
                 <!-- DELETE -->
-                <a href="<?= $row['id']; ?>">
-    <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                 
+                <a href="Admin.php?id=<?= $row['id']; ?>">
+        <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
         <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
     </button>
 </a>
@@ -134,15 +146,6 @@ $continent =mysqli_query($conn,"SELECT * FROM `continent`");
             <h3 class="text-2xl font-semibold text-black">ID: <?= $row['id']; ?></h3>
             <p class="text-gray-700 text-lg">Name: <span class="font-bold text-red-700"><?= $row['name']; ?></span></p>
             <div class="line w-[8rem] mt-[5px]">
-                <!-- Edit Button -->
-                <button class=" text-white py-2 px-4 rounded hover:bg-[#ffff00a4] focus:outline-none focus:ring-2 focus:ring-[#ffff00]">
-                <img src="/Educational-website/img_page/icons8-edit-24.png" alt="">
-                </button>
-                
-                <!-- Delete Button -->
-                <button class="text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-                <img src="/Educational-website/img_page/icons8-delete-50.png " class="w-[1.5rem]" alt="">
-                </button>
 
         </div>
         </div>
