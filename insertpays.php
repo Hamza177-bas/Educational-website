@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="insert.php" method="POST">
+    <form action="insertpays.php" method="POST">
         <input type="text" name="name" placeholder="Name" required>
         <input type="number" name="population" placeholder="Population" required>
         <input type="text" name="languages" placeholder="Languages" required>
@@ -35,9 +35,9 @@
         $stmt->bind_param("sisi", $name, $population, $languages,$id_con);
         
         if ($stmt->execute()) {
-            echo "New record inserted successfully!";
+            // echo "New record inserted successfully!";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error:" . $stmt->error;
         }
 
         $stmt->close();
